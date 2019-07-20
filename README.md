@@ -6,7 +6,7 @@ This is the source code to Word Writer 6 for the Commodore 64 published by Timew
 Word Writer was originally written in the 2500AD Cross Assembler.  That source is included in the WW6_2500AD folder.  Running the 2500AD assembler is not feasible today so the source code has been converted using [Convert To ACME](https://github.com/jefflomax/converttoacme) to the free ACME Cross Assembler, available on Windows, MacOS, and Linux.  The converted code is in WW6_ACME.
 
 ## Setup
-The easy way to start is to setup using the [acme-assembly-vscode-template](https://github.com/Esshahn/acme-assembly-vscode-template).  This will include 
+The easy way to start is to setup using the [acme-assembly-vscode-template](https://github.com/Esshahn/acme-assembly-vscode-template).  This will include the ACME assembler in the bin folder.  A slightly modified tasks.json file from the template is included in this repo.
 
 ### Folder Structure
 ```
