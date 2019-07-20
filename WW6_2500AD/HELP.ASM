@@ -1,0 +1,97 @@
+;
+ TITLE HELP_SCREEN
+ PW 92
+;
+ INCLUDE WWSETUP.ASM
+ PUBLIC FC_HELP
+;
+ EXTERN AX_INTO_MSGOUT 
+ EXTERN FULL_SCREEN
+ EXTERN KEYBRD
+ EXTERN PULLDN
+ EXTERN W_INTO_MSGOUT			;POINTERM
+;
+; 
+ INCLUDE VARIABLS.ASM
+;
+;
+FC_HELP:
+; LDA #<HELP_BOX
+; LDX #>HELP_BOX
+; JSR AX_INTO_MSGOUT
+; JSR W_INTO_MSGOUT
+; DW HELP_BOX
+;
+ LDA #6  ;CBOFFSET
+ JSR PULLDN ;DRAW THE BOX
+ DW HELP_BOX
+ JSR KEYBRD
+ JMP FULL_SCREEN
+;
+;
+.BIT7 OFF
+;
+HELP_BOX:
+; DB 27
+ DB 26
+ DB $FF,64,24
+ DB $FF,32,9,'HELP!',$FF,32,9
+ DB $6A
+.BIT7 ON
+ DB 'COMM KEYS'
+.BIT7 OFF
+ DB $74,32,111,32,$6A
+.BIT7 ON 
+ DB 'CTRL KEYS'
+.BIT7 OFF
+ DB $74
+;
+.IFFALSE DEBUGGER_PRESENT
+;
+ DB 'BOL','D'-64,'OF','F'-64,'  ',$6A
+ DB 'B'+$80,$74,'BOL','D'-64,'ON',$FF,32,3
+;
+; DB 93,'CAP','S'-64,'LOC','K'-64,' ',$6A
+; DB 'C'+$80,$74,'CLEA','R'-64,'TAB','S'-64,93
+;
+ DB 'DE','L'-64,'CHA','R'-64,'RT',$6A,'D'+$80,$74,'DELIMITE','R'-64,' '
+;
+ DB 'FONT/STYL','E'-64,$6A,'F'+$80,$74,'FON','T'-64,'SELECT'
+ DB 'GOT','O'-64,'EN','D'-64,'  ',$6A
+ DB 'G'+$80,$74,'GOT','O'-64,'TO','P'-64,'  '
+;
+ DB 'ITALIC','S'-64,'OFF',$6A,'I'+$80,$74,'ITALIC','S'-64,'O','N'-64
+ DB 'LOA','D'-64,'DO','C'-64,'  ',$6A,'L'+$80,$74,'LOWE','R'-64,'INDEX'
+ DB 'NEX','T'-64,'MAR','K'-64,' ',$6A
+ DB 'N'+$80,$74,'NEX','T'-64,'PAG','E'-64,' '
+;
+ DB 'PRIN','T'-64,'DO','C'-64,' ',$6A
+ DB 'P'+$80,$74,'PRE','V'-64,'PAG','E'-64,' '
+;
+ DB 'QUI','T'-64,'O','R'-64,'NEW',$6A
+ DB 'Q'+$80,$74,'QUER','Y'-64,'MEMRY'
+;
+ DB 'RETUR','N'-64,'TOGL',$6A,'R'+$80,$74,'RAIS','E'-64,'INDEX'
+ DB 'SAV','E'-64,'DO','C'-64,'  ',$6A
+ DB 'S'+$80,$74,'SE','T'-64,'MAR','K'-64,'  '
+;
+ DB 'UNDRL','N'-64,'OF','F'-64,$6A
+ DB 'U'+$80,$74,'UNDRL','N'-64,'O','N'-64,' '
+;
+ DB 'VIE','W'-64,'DI','R'-64,'  ',$6A,'V'+$80,$74,'VIRTUA','L'-64,'MAR'
+ DB 'COD','E'-64,'1 OF','F'-64,$6A
+ DB 'W'+$80,$74,'COD','E'-64,'1 O','N'-64,' '
+;
+ DB 'COD','E'-64,'2 OF','F'-64,$6A
+ DB 'X'+$80,$74,'COD','E'-64,'2 O','N'-64,' '
+;
+ DB 'COD','E'-64,'3 OF','F'-64,$6A
+ DB 'Y'+$80,$74,'COD','E'-64,'3 O','N'-64,' '
+;
+.ENDIF
+; 
+ DB $FF,64,11,249,$FF,64,11,0
+;
+;
+ END
+;

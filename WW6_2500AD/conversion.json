@@ -1,0 +1,38 @@
+{
+"Format":"AD2500",
+"Modules":[
+{"File":"BPRINT.ASM","Abr":"BP","Renames":[
+	"INCDEC_PAGE4",
+	"INCDEC_PAGE1",
+	"INCDEC_PAGE6",
+	"INCDEC_PAGE_TENS"
+]},
+{"File":"FORMAT.ASM","Abr":"FM","Renames":[
+	"ABORT",
+	"IPTY_INTO_AX"
+]},
+{"File":"OUTLN.ASM","Abr":"OL","Renames":[
+	"T1",
+	"INDEX"
+]},
+{"File":"THESRUS.ASM","Abr":"TS","Renames":[
+	"T1",
+	"LEN",
+	"RESULT",
+	"STATUS",
+	"STRIP",
+	"STRIP0",
+	"STRIP2",
+	"STRIP3"
+]},
+{"File":"MINIDB.ASM","abr":"MD","Renames":[
+	"CLC_RTS",
+	"SEC_RTS"
+]},
+{"File":"PRINT.ASM","abr":"PM","Renames":[
+	"LINES_PER_PAGE"
+]}
+],
+"Macros":[],
+"EmitOriginal":false
+}

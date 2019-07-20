@@ -1,0 +1,1 @@
+C:\Tools\VICE\x64.exe -initbreak STRTUP -moncommands build/labelsd build/ww6data.prg

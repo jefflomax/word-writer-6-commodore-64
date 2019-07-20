@@ -1,0 +1,1 @@
+C:\Tools\VICE\x64.exe -initbreak PAG_LIN_COL_OUT -moncommands build/labels build/ww6outln.prg

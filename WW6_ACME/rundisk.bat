@@ -1,0 +1,1 @@
+c:\Tools\vice\x64.exe -moncommands build/labels -autoload build/TEST.D64
